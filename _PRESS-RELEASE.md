@@ -15,13 +15,25 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
+
+ ToDooly:  Is a todo list app that rewards you with gift cards for completing tasks.
+
+  Anybody who has a to-do list will benefit from the great incentives this app provides!
+    Have you ever filled out a todo list and promptly forgotten about it?  Fear not, because
+  forgetting *this* todo list will be like leaving money on the table.  All you have to do is
+  write your todo list, choose a parter and select your reward!  Founder Eric King says: 
+    "I founded ToDooly to bring to-do lists into the 21st century!".
+  Getting started is super simple.  Just go to our website and sign up for a free account to
+  start making awesome to-do lists.  Debbie DoAlot, a longtime user recently said:
+    "This is the greatest product of all time, I had to change my name from DoLittle to DoALot after using this app!".
+  If you've ever written a to-do list that never got done, fear not, ToDooly is here for you!
+  Check out ToDooly.com now!
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
-
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
