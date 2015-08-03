@@ -1,0 +1,20 @@
+{
+  "name": "todooly",
+  "version": "0.0.1",
+  "homepage": "https://github.com/EJKinger/2015-06-solo",
+  "authors": [
+    "Eric King <e.king117@gmail.com>"
+  ],
+  "description": "ToDo app",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.3"
+  }
+}
