@@ -1,6 +1,17 @@
-angular.module('todooly', [])
+angular.module('todooly', [
+  'todooly.todo'])
 
-.config(function(){
+.config(function($routeProvider, $httpProvider){
+  $routeProvider
+    .when('/', {
+
+    })
+    .when('/todo', {
+
+    })
+    .otherwise({
+      redirectTo: '/'
+    });
 
 })
 
