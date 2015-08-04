@@ -4,28 +4,34 @@
     <meta charset="utf-8">
     <title>todooly</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
 
     <!-- dependencies -->
     <script src="lib/jquery/dist/jquery.js"></script>
     <script src="lib/underscore/underscore.js"></script>
+    <script src="lib/jquery-ui/jquery-ui.js"></script>
+
     <!-- your scripts -->
     <script src="script.js"></script>
   </head>
   <body>
-
-
     <div id="main">
+
       <div class="header">
-        <h1>Todooly</h1>
+        <h1 class="title">ToDooly</h1>
       </div>
 
       <div class="index">
-        <div>
-          <a class="incentiveLink" href="#">Incentivize Yourself!</a>
+        <div class="incentiveDisplay"></div>
+
+        <div class="displayIncentive">
+          <div id="progressbar-1"></div>
+          <div class="incentiveImage"><a href="#"><img class="smallIcon incentiveLink clicker" src="img/plus.png"></a></div>
         </div>
 
         <div class="newTodo">
-          <input class="newTodoInput" placeholder="Enter a new todo item"></input>
+          <input type="text" class="newTodoInput" placeholder="Enter a new todo item" required></input>
           <button id="newTodoButton">submit</button>
         </div>
 
@@ -34,18 +40,15 @@
           </ul>
         </div>
 
-        <div class="todoSuccessFeed">
-        </div>
+        <div class="todoSuccessFeed"></div>
       </div>
 
 
       <div class="incentive">
-        <div>
-          <a class="indexLink" href="#">Back to your todos</a>
-        </div>
+
 
         <div class="amount">$
-          <input type="number" class="newAmount" placeholder="Enter your incentive amount" required></input>
+          <input type="number" class="newAmount" placeholder="Enter $" required></input>
           <button id="confirmAmount">submit</button>
         </div>
 

@@ -1,3 +1,19 @@
+body {
+  width: 700px;
+  height: 100vh;
+  margin: 0 auto;
+  background: #D8D8D8;
+}
+#main{
+  height: 100vh;
+  background: white;
+}
+.title{
+  font-family: 'The Girl Next Door', cursive;
+  font-size: 60px;
+  padding-top: 20px;
+  margin-left: 40px;
+}
 .index {
   display: inline;
 }
@@ -10,17 +26,47 @@
   list-style-type: none;
 }
 
+.newTodo {
+  margin-left: 150px;
+}
+
+.newTodoInput {
+  margin: 0 auto;
+  width: 200px;
+  height: 25px;
+  font-size: 20px;
+}
+#newTodoButton {
+  position: relative;
+  top: -2px;
+  width: 65px;
+  height: 25px;
+  font-size: 15px;
+}
+
 .todoSuccessFeed {
 }
 
+.smallIcon {
+  border-radius: 3px;
+  border: solid white 2px;
+  max-width: 40px;
+  float: bottom left;
+}
+
+.amountNum {
+  font-size: 30px;
+}
+
 .day {
+  text-align: center;
   display: block;
   float: left;
   height: 130px;
-  width: 75px;
+  width: 80px;
   border: solid black 1px;
   border-radius: 5px;
-  margin-right: 5px;
+  margin: 9px;
 }
 .dayText {
   text-align: center;
@@ -32,4 +78,56 @@
   border: solid white 4px;
   max-width: 150px;
   margin: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.displayIncentive {
+  margin: 20px;
+  max-height: 40px;
+  width: 500px;
+}
+
+#progressbar-1 {
+  margin-left: 25px;
+  max-width: 450px;
+  
+}
+.amountNum {
+  position: relative;
+  top: 5px;
+  float:right;
+}
+
+.incentiveImage {
+  float: left;
+  display:block;
+  max-height: 40px;
+  max-width: 100px;
+  right: -480px;
+  top: -41px;
+  position: relative;
+}
+.amount {
+  font-size: 30px;
+  max-width: 400px;
+  position: relative;
+  right: -200px;
+}
+#confirmAmount {
+  position: relative;
+  top: -2px;
+  width: 65px;
+  height: 25px;
+  font-size: 15px;
+}
+.newAmount{
+  margin: 0 auto;
+  width: 200px;
+  height: 25px;
+  font-size: 20px;
+}
+li{
+  margin-left: 5px;
+  font-size: 35px;
+  padding: 3px;
 }

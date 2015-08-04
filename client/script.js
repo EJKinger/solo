@@ -47,24 +47,27 @@ $(document).ready(function(){
         "<div class='day'><span class='dayText'>" + numberToDay(objDate.getDay()) + "</span></div>"
         );
     });
-    
   };
 
   //Global todo list object
   var todoList = updateListDays();
-  var incentive = {};
+  var incentive = {
+    length: 0,
+    complete: 0
+  };
   updateSuccessFeed();
+
+  $(function() {
+      $( "#progressbar-1" ).progressbar({
+        value: 2
+      });
+  });
   
-
-
-
-
-
-  // Inserts new todo item
+   // Inserts new todo item
   var updateTodoList = function() {
     $('.todoList').empty();
     _.each(todoList[getDay().full], function(item){
-      $('.todoList').append("<li><input type='checkbox'>" + item + "</li>");
+      $('.todoList').append("<li><input class='check' type='checkbox'>" + item + "</li>");
     });
   };
 
@@ -81,20 +84,47 @@ $(document).ready(function(){
   $('#newTodoButton').on('click', function(e){
     todoList[getDay().full].push($('.newTodoInput').val());
     $('.newTodoInput').val('');
+    incentive.length++;
     updateTodoList();
   });
 
-  $('.newAmount').on('change keyup paste', function(e){
-    $('.amountDisplay').text('$' + $(this).val());
-  });
+  // $('.newAmount').on('change keyup paste', function(e){
+  //   $('.amountDisplay').text('$' + $(this).val());
+  // });
 
   $('.incentiveLink').on('click', function(e){
+    $('.clicker').css('display', 'none');
     $('.index').css('display', 'none');
     $('.incentive').css('display', 'inline');
   });
   $('.indexLink').on('click', function(e){
     $('.incentive').css('display', 'none');
     $('.index').css('display', 'inline');
+  });
+  $('#confirmAmount').on('click', function(e){
+    incentive.amount = $('.newAmount').val();
+    if (incentive.store && incentive.amount){
+      $('.incentive').css('display', 'none');
+      $('.index').css('display', 'inline');
+      $('.incentiveDisplay').css('display', 'none');
+      $('.displayIncentive').append(
+        "<div class='incentiveImage'><img class='smallIcon' src='img/" + incentive.store + ".png'><span class='amountNum'>$" + incentive.amount + "</span></div>");
+    }
+    else {
+      alert("Please select an incentive!");
+    } 
+  });
+  $( '.todoList' ).on( "click", ".check", function(e){
+    incentive.complete++;
+    $(function() {
+      $( "#progressbar-1" ).progressbar({
+        value: (incentive.complete / incentive.length) * 100
+      });
+    });
+    if (incentive.complete / incentive.length === 1){
+      $('.smallIcon').css('border', 'solid green 3px');
+      setTimeout(function(){alert('Good Job! You earned your reward :)');}, 500);
+    }
   });
 
 
