@@ -1,10 +1,6 @@
 $(document).ready(function(){
   //Global todo list object
-<<<<<<< HEAD
   var today = new Date();
-=======
-
->>>>>>> e814b3da3fc8c172ab61dcd3118671e4ea1305c1
   var todoList = {
 
     20150212: [],
@@ -18,99 +14,7 @@ $(document).ready(function(){
     20150218: []
   };
 
-<<<<<<< HEAD
 
-=======
-  /*
-    DATABASE INTERACTION FUNCTIONS
-  */
-  var getData = function(roomName){
-    return $.ajax({
-      url: "https://api.parse.com/1/classes/chatterbox",
-      type: 'GET',
-      contentType: 'application/json',
-      success: function(data) {
-        getRooms(data);
-        insertMessages(data, roomName);
-        boldFriendsMessages();
-      },
-
-      error: function(data) {
-        console.log(data);
-      }
-    });
-  };
-
-  var postMessage = function(message) {
-    $.ajax({
-      url: "https://api.parse.com/1/classes/chatterbox",
-      type: 'POST',
-      data: JSON.stringify(message),
-      contentType: 'application/json',
-      success: function(data) {
-        //clear message and room input fields
-        $('.userInput').val('');
-        $('.newRoomName').val('');
-        getData(message.roomname);
-      },
-      error: function(data) {
-        console.log(data);
-        alert('ERROR: Message Not Sent');
-      }
-    });
-  };
-
-
-  /*
-    HELPERS
-  */
-  // WRITE DATA TO THE DOM
-  var insertMessages = function(data, roomName) {
-    // CLEAR MESSAGE AREA
-    $('.messages').empty();
-    for (var i = 0; i < data.results.length; i++) {
-      // IF A ROOM IS SELECTED, WRITE TO THAT ROOM
-      if (roomName !== undefined && roomName !== 'Select All'){
-        if (data.results[i].roomname === roomName){
-          $('.messages').append("<div class='message'>" +
-                                  "<p><a class='userNameLink' href='#'>" + _.escape(data.results[i].username) + "</a></p>" +
-                                  "<p class='" + _.escape(window.decodeURIComponent(data.results[i].username)) + "'>" + _.escape(data.results[i].text) +     "</p>" +
-                                "</div>");
-        }
-      }
-      // IF ROOM WAS NOT CHOSEN, SHOW ALL MESSAGES
-      else {
-        $('.messages').append("<div class='message'>" +
-                                "<p><a class='userNameLink' href='#'>" + _.escape(data.results[i].username) + "</a></p>" +
-                                "<p class='" + _.escape(window.decodeURIComponent(data.results[i].username)) + "'>" + _.escape(data.results[i].text) +     "</p>" +
-                              "</div>");
-      }
-    }
-  };
-
-  // ADDS ROOMS TO DROP-DOWN LIST
-  var getRooms = function(data){
-    var rooms = [];
-    for (var i = 0; i < data.results.length; i++){
-      rooms.push(_.escape(data.results[i].roomname));
-    }
-    rooms = _.uniq(rooms);
-    rooms.forEach(function(item){
-      var append = true;
-      if ($('.roomsList .user').length > 0){
-        $('.roomsList .user').each(function(index, option){
-          console.log('option: ' + option);
-          if (option.value === item){
-            append = false;
-          }
-        });
-      } 
-      if (append === true) {
-        $('.roomsList').append("<option class='user'>" + item + "</option>");
-      }
-    });
-  };
->>>>>>> e814b3da3fc8c172ab61dcd3118671e4ea1305c1
 
   // Inserts new todo item
   var updateTodoList = function() {
