@@ -2,21 +2,18 @@
   list-style-type: none;
 }
 
+.todoSuccessFeed {
+}
+
 .day {
-  display: inline-block;
+  display: block;
+  float: left;
   height: 130px;
   width: 75px;
   border: solid black 1px;
   border-radius: 5px;
   margin-right: 5px;
 }
-
-.yesterday1 {
-  background-color: green;
-}
-.yesterday2 {
-  background-color: red;
-}
-.yesterday3 {
-  background-color: green
+.dayText {
+  text-align: center;
 }

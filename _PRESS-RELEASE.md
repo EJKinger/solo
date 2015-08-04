@@ -21,7 +21,7 @@ Once the project moves into development, the press release can be used as a touc
   Anybody who has a to-do list will benefit from the great incentives this app provides!
     Have you ever filled out a todo list and promptly forgotten about it?  Fear not, because
   forgetting *this* todo list will be like leaving money on the table.  All you have to do is
-  write your todo list, choose a parter and select your reward!  Founder Eric King says: 
+  write your todo list and select your reward!  Founder Eric King says: 
     "I founded ToDooly to bring to-do lists into the 21st century!".
   Getting started is super simple.  Just go to our website and sign up for a free account to
   start making awesome to-do lists.  Debbie DoAlot, a longtime user recently said:
