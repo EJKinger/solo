@@ -19,32 +19,43 @@
         <h1>Todooly</h1>
       </div>
 
-      <div>
-        <a href="/incentive.html">Incentivize Yourself!</a>
-      </div>
-
-      <div class="newTodo">
-        <input class="newTodoInput" placeholder="Enter a new todo item"></input>
-        <button id="newTodoButton">submit</button>
-      </div>
-
-      <div class="todo">
-        <ul class="todoList">
-        </ul>
-      </div>
-
-      <div class="todoSuccessFeed">
-      <!--
-        <div class="day yesterday2"></div>
-        <div class="day yesterday1"></div>
-        <div class="day yesterday1"></div>
-        <div class="day today">
-          <h3 class="inside">Today:</h3>
+      <div class="index">
+        <div>
+          <a class="incentiveLink" href="#">Incentivize Yourself!</a>
         </div>
-        <div class="day tomorrow1"></div>
-        <div class="day tomorrow2"></div>
-        <div class="day tomorrow3"></div>
-      -->
+
+        <div class="newTodo">
+          <input class="newTodoInput" placeholder="Enter a new todo item"></input>
+          <button id="newTodoButton">submit</button>
+        </div>
+
+        <div class="todo">
+          <ul class="todoList">
+          </ul>
+        </div>
+
+        <div class="todoSuccessFeed">
+        </div>
+      </div>
+
+
+      <div class="incentive">
+        <div>
+          <a class="indexLink" href="#">Back to your todos</a>
+        </div>
+
+        <div class="amount">$
+          <input type="number" class="newAmount" placeholder="Enter your incentive amount" required></input>
+          <button id="confirmAmount">submit</button>
+        </div>
+
+        <div class="selections">
+          <img class="selection" data-store="amazon" src="img/amazon.png">
+          <img class="selection" data-store="newegg" src="img/newegg.png">
+          <img class="selection" data-store="steam" src="img/steam.png">
+        </div>
+
+        <h1 class="amountDisplay"></h1>
       </div>
 
       <div class='footer'></div>

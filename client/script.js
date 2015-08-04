@@ -42,7 +42,6 @@ $(document).ready(function(){
 
   var updateSuccessFeed = function(){
     _.each(todoList, function(val){
-      console.log(val.day);
       var objDate = new Date(val.year, 0, val.day - 201500000);
       $('.todoSuccessFeed').append(
         "<div class='day'><span class='dayText'>" + numberToDay(objDate.getDay()) + "</span></div>"
@@ -53,6 +52,7 @@ $(document).ready(function(){
 
   //Global todo list object
   var todoList = updateListDays();
+  var incentive = {};
   updateSuccessFeed();
   
 
@@ -72,13 +72,40 @@ $(document).ready(function(){
 
   //LISTENERS
     //Listens for new todo submit button
+  $('.selection').on('click', function(e){
+    $('.selection').css('border', 'solid white 4px');
+    $(this).css('border', 'solid #7FFF00 4px');
+    incentive.store = $(this).data("store");
+  });
+
   $('#newTodoButton').on('click', function(e){
     todoList[getDay().full].push($('.newTodoInput').val());
     $('.newTodoInput').val('');
     updateTodoList();
-    var eric = new Date(2015, 0, 1);
   });
+
+  $('.newAmount').on('change keyup paste', function(e){
+    $('.amountDisplay').text('$' + $(this).val());
+  });
+
+  $('.incentiveLink').on('click', function(e){
+    $('.index').css('display', 'none');
+    $('.incentive').css('display', 'inline');
+  });
+  $('.indexLink').on('click', function(e){
+    $('.incentive').css('display', 'none');
+    $('.index').css('display', 'inline');
+  });
+
+
 getDay();
 
 });
+
+
+
+
+
+
+
 

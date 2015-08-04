@@ -1,3 +1,11 @@
+.index {
+  display: inline;
+}
+
+.incentive {
+  display: none;
+}
+
 .todoList {
   list-style-type: none;
 }
@@ -16,4 +24,12 @@
 }
 .dayText {
   text-align: center;
+}
+
+.selection {
+  border-radius: 3px;
+  padding: 2px;
+  border: solid white 4px;
+  max-width: 150px;
+  margin: 20px;
 }
