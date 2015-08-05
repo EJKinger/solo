@@ -1,56 +1,35 @@
 $(document).ready(function(){
 
   //returns the number of days since dec 31 of prev year
-  var getDay = function(){
-    var now = new Date();
-    var start = new Date(now.getFullYear(), 0, 0);
-    var diff = now - start;
-    var oneDay = 1000 * 60 * 60 * 24;
-    days = Math.floor(diff / oneDay);
-    return {full: Number(now.getFullYear() + '00' + days),
-            year: now.getFullYear(),
-            day: days
-    };
+  var todoList =  {
+    y201500213: {year: 2015, day: "Saturday" , complete: true,  reward: {amount: 5, store: "amazon"}, todo: ["Laundry", "Shopping", "Finish project"]},
+    y201500214: {year: 2015, day: "Sunday"   , complete: false, reward: {amount: 5, store: "steam"},  todo: ["Eat", "Sleep"]},
+    y201500215: {year: 2015, day: "Monday"   , complete: true,  reward: {amount: 5, store: "newegg"}, todo: ["Workout", "Cook", "Party"]},
+    y201500216: {year: 2015, day: "Tuesday"  , complete: null,  reward: {amount: 5, store: ""},       todo: []},
+    y201500217: {year: 2015, day: "Wednesday", complete: null,  reward: {amount: 5, store: ""},       todo: []},
+    y201500218: {year: 2015, day: "Thursday" , complete: null,  reward: {amount: 5, store: ""},       todo: []},
+    y201500219: {year: 2015, day: "Friday"   , complete: null,  reward: {amount: 5, store: ""},       todo: []}
   };
 
-  //adds 3 days before, today, and 3 days after to todolist
-  var updateListDays = function(){
-    var retVal = {};
-    var today = getDay();
-    var start = today.full - 3;
-    var end = today.full + 3;
-    for (var i = start; i <= end; i++){
-      retVal[i] = [];
-      retVal[i].year = today.year;
-      retVal[i].day = i;
-    }
-    return retVal;
-  };
+  var today = "y201500216";
 
-  var numberToDay = function(day){
-    var days = {
-      0: "Sunday",
-      1: "Monday", 
-      2: "Tuesday",
-      3: "Wednesday",
-      4: "Thursday",
-      5: "Friday",
-      6: "Saturday"
-    };
-    return days[day];
-  };
 
   var updateSuccessFeed = function(){
-    _.each(todoList, function(val){
-      var objDate = new Date(val.year, 0, val.day - 201500000);
+    $('.todoSuccessFeed').empty();
+    _.each(todoList, function(val, key){
+      console.log(key);
       $('.todoSuccessFeed').append(
-        "<div class='day'><span class='dayText'>" + numberToDay(objDate.getDay()) + "</span></div>"
+        "<div class='day " + val.complete + "' data-key='" + key + "''><span class='dayText'>" + val.day + "</span></div>"
         );
     });
+    $('.todoSuccessFeed').find('.true').append("<img class='label' src='img/check.png'>");
+    $('.todoSuccessFeed').find('.false').append("<img class='label' src='img/ex.png'>");
   };
 
+  
+
   //Global todo list object
-  var todoList = updateListDays();
+  //var todoList = updateListDays();
   var incentive = {
     length: 0,
     complete: 0
@@ -66,7 +45,7 @@ $(document).ready(function(){
    // Inserts new todo item
   var updateTodoList = function() {
     $('.todoList').empty();
-    _.each(todoList[getDay().full], function(item){
+    _.each(todoList[today].todo, function(item){
       $('.todoList').append("<li><input class='check' type='checkbox'>" + item + "</li>");
     });
   };
@@ -82,7 +61,7 @@ $(document).ready(function(){
   });
 
   $('#newTodoButton').on('click', function(e){
-    todoList[getDay().full].push($('.newTodoInput').val());
+    todoList[today].todo.push($('.newTodoInput').val());
     $('.newTodoInput').val('');
     incentive.length++;
     updateTodoList();
@@ -122,13 +101,17 @@ $(document).ready(function(){
       });
     });
     if (incentive.complete / incentive.length === 1){
+      todoList[today].complete = true;
+      updateSuccessFeed();
       $('.smallIcon').css('border', 'solid green 3px');
       setTimeout(function(){alert('Good Job! You earned your reward :)');}, 500);
     }
   });
 
-
-getDay();
+  $('.day').on('click', function(e){
+    today = $(this).data('key');
+    updateTodoList();
+  });
 
 });
 

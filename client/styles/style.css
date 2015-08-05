@@ -131,3 +131,6 @@ li{
   font-size: 35px;
   padding: 3px;
 }
+.label {
+  max-height: 50px;
+}
